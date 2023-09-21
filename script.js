@@ -1,37 +1,28 @@
-const carousel = document.querySelector(".carousel");
-const prevButton = document.querySelector(".prev-button");
-const nextButton = document.querySelector(".next-button");
-const r = document.querySelector(":root");
+// Close side navbar on link click
+const sideNavBar = document.getElementById("sideNavBar");
+const offcanvas = new bootstrap.Offcanvas(sideNavBar);
+const offcanvasLinks = document.getElementsByClassName("offcanvas-link");
 
-const maxIndex = 2;
-const minIndex = 0;
-let currentIndex = 1;
-
-function getCurrentIndex() {
-    let rs = getComputedStyle(r);
-    return rs.getPropertyValue("--carouselIndex");
+for (const link of offcanvasLinks) {
+    link.addEventListener("click", () => {
+        offcanvas.hide();
+    });
 }
 
-function setCurrentIndex(index) {
-    r.style.setProperty("--carouselIndex", index);
-}
-
-prevButton.addEventListener("click", () => {
-    currentIndex = getCurrentIndex();
-    if (currentIndex <= minIndex) return;
-    setCurrentIndex(--currentIndex);
-    nextButton.disabled = false;
-    if (currentIndex == minIndex) {
-        prevButton.disabled = true;
+// Carousel setup
+const swiper = new Swiper(".carousel", {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    centeredSlides: true,
+    navigation: {
+        prevEl: ".prev-button",
+        nextEl: ".next-button",
+    },
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 20
+        }
     }
 });
-
-nextButton.addEventListener("click", () => {
-    currentIndex = getCurrentIndex();
-    if (currentIndex >= maxIndex) return;
-    setCurrentIndex(++currentIndex);
-    prevButton.disabled = false;
-    if (currentIndex == maxIndex) {
-        nextButton.disabled = true;
-    }
-})
