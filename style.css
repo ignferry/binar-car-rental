@@ -178,6 +178,14 @@ footer {
 #cover-img {
     margin-top: 2rem;
     padding-right: 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+.our-service-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #testimonial {
