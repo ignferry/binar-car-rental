@@ -32,7 +32,9 @@ export default class App {
                        res.end();
                        return;
                     case "/cars":
-                        res.writeHead(501);
+                        res.writeHead(200, { "Content-Type": "text/html" });
+                        res.write(this.getFile("cari_mobil.html"))
+                        res.end();
                         res.end();
                         return;
                     default:
