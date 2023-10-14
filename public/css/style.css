@@ -84,7 +84,7 @@ section::before {
 
 #ourServices li {
     padding-left: 30px;
-    background: url("./assets/list_bullet.png") no-repeat left center;
+    background: url("../assets/list_bullet.png") no-repeat left center;
     line-height: 36px;
 }
 
