@@ -7,13 +7,17 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "npx tsc && node server/build/index.js"
+    "start": "npx tsc && node server/build/index.js",
+    "build": "npx tsc",
+    "dev": "npx nodemon server/index.ts"
   },
   "dependencies": {
     "dotenv": "^16.3.1"
   },
   "devDependencies": {
     "@types/node": "^20.8.6",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   }
 }
