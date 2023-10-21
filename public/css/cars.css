@@ -1,0 +1,86 @@
+#cover {
+    position: relative;
+}
+
+#search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -135px;
+    min-height: 200px;
+}
+
+.search-form-div {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 1em;
+    @media only screen and (min-width: 960px) {
+        grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
+    } 
+}
+
+.search-input-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-input-div label {
+    flex-grow: 1;
+}
+
+.search-submit-div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#search-result {
+    font-size: 0.8em;
+}
+
+.card-body .car-img {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.car-props {
+    flex-grow: 1;
+}
+
+#search-btn {
+    height: 40px;
+    font-size: 0.8rem;
+}
+
+.form-control, .form-select {
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 14px 14px;
+    height: 40px;
+}
+
+#input-tanggal {
+    background-image: url(../assets/fi_calendar.png);
+}
+
+#input-waktu {
+    background-image: url(../assets/fi_clock.png);
+}
+
+#input-penumpang {
+    background-image: url(../assets/fi_users.png);
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
