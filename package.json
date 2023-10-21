@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "npx tsc && node server/build/index.js",
+    "start": "npx tsc && node server/index.js",
     "build": "npx tsc",
     "dev": "npx nodemon server/index.ts"
   },
