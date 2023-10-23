@@ -21,21 +21,57 @@ class CarsSearchBar {
     }
 
     init() {
+        // Set event listeners
+        this.driverInput.addEventListener("change", this.toggleSelectColor);
+        this.waktuInput.addEventListener("change", this.toggleSelectColor);
+
+        this.tanggalInput.addEventListener("focus", this.onDateInputFocus);
+        this.tanggalInput.addEventListener("blur", this.onDateInputBlur);
+
         this.driverInput.addEventListener("change", this.toggleSearchButton);
         this.tanggalInput.addEventListener("change", this.toggleSearchButton);
         this.waktuInput.addEventListener("change", this.toggleSearchButton);
+
         this.searchForm.addEventListener("submit", this.handleSearchSubmit);
     }
 
+    setInitialColors() {
+        // Set initial select colors
+        if (this.driverInput.value) {
+            this.driverInput.style.color = "black";
+        } else {
+            this.driverInput.style.color = "grey";
+        }
+
+        if (this.waktuInput.value) {
+            this.waktuInput.style.color = "black";
+        } else {
+            this.waktuInput.style.color = "grey";
+        }
+    }
+
+    toggleSelectColor(e) {
+        if (this.value) {
+            this.style.color = "black";
+        } else {
+            this.style.color = "grey";
+        }
+    }
+
+    onDateInputFocus(e) {
+        this.type = "date";
+    }
+
+    onDateInputBlur(e) {
+        this.type = "text";
+    }
+
     toggleSearchButton(e) {
-        console.log(this)
         if (this.driverInput.value && this.tanggalInput.value && this.waktuInput.value) {
             this.searchButton.disabled = false;
         } else {
             this.searchButton.disabled = true;
         }
-
-
     }
 
     async handleSearchSubmit(e) {

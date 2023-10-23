@@ -39,6 +39,8 @@ class CarsPage {
         this.searchBar.fillFormInputs(filters.driver, filters.tanggal, filters.waktu, requiredCapacity);
         this.searchBar.toggleSearchButton();
 
+        this.searchBar.setInitialColors();
+
         this.searchResult.load(dateTime, requiredCapacity);
     }
 

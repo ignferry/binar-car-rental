@@ -58,6 +58,7 @@
 
 #search-btn {
     height: 40px;
+    width: 90px;
     font-size: 0.8rem;
 }
 
@@ -66,6 +67,14 @@
     background-position: right 10px center;
     background-size: 14px 14px;
     height: 40px;
+}
+
+.form-select {
+    color: grey;
+}
+
+.form-select option {
+    color: black;
 }
 
 #input-tanggal {
