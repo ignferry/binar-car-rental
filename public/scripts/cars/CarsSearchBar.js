@@ -60,6 +60,7 @@ class CarsSearchBar {
 
     onDateInputFocus(e) {
         this.type = "date";
+        this.showPicker();
     }
 
     onDateInputBlur(e) {
